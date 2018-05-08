@@ -5,7 +5,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import org.springframework.stereotype.Component;
 
 /**
- * @author tangj
+ * @author janti
  * @date 2018/5/6 22:59
  */
 @Component

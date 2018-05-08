@@ -40,6 +40,10 @@ public class NettyTcpClient {
         channel.close();
     }
 
+    /**
+     * 发送消息 使用方法即可
+     * @param msg
+     */
     public void sendMessage(String msg) {
         try {
             for (int i = 0; i < 2; i++) {
