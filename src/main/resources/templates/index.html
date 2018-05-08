@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="panel-heading">
+    <h3 class="panel-title">个性化设置</h3>
+</div>
+<div class="panel-body">
+    <form id="indivi-form" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-3 control-label">姓名</label>
+            <div class="col-md-9">
+                <input type="text" name="social_weibo"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">地址</label>
+            <div class="col-md-9">
+                <input type="text" name="social_zhihu"/>
+            </div>
+        </div>
+        <br/>
+        <div class="clearfix pull-right">
+            <button type="button" onclick="saveIndiviSetting()">
+                保存设置
+            </button>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

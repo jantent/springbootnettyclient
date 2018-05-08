@@ -1,0 +1,68 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>登录博客后台</title>
+
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <script th:src="@{//cdn.bootcss.com/jquery/2.2.3/jquery.min.js}"></script>
+    <script th:src="@{/js/amazeui.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/amazeui.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/app.css}"/>
+    <script th:src="@{/js/base.js}"></script>
+</head>
+<body>
+
+
+    <form class="am-form" id="articleform"  method="post" onsubmit="return checkForm()">
+        <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                文章标题
+            </div>
+            <div class="am-u-sm-8 am-u-md-4">
+                <input type="text" class="am-input-sm" name="title">
+            </div>
+            <div class="am-hide-sm-only am-u-md-6">*必填，不可重复</div>
+        </div>
+
+        <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                文章作者
+            </div>
+            <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+                <input type="text" class="am-input-sm" name="author">
+            </div>
+        </div>
+
+        <button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+    </form>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    function checkForm() {
+        $.ajax({
+            type: 'POST',
+            url: '/postnetty',
+            data: $("#articleform").serialize(),
+            async: false,
+            dataType: 'json',
+            success: function (result) {
+                self.hideLoading();
+                if (result && result.success) {
+                    alert("OK");
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
+
+    /*]]>*/
+</script>
+</body>
+</html>
